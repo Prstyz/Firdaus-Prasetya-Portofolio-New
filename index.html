@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firdaus P Portfolio</title>
+    <link rel="stylesheet" href="./output.css">
+    <link rel="stylesheet" href="./input.css">
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ovo&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        lightTheme: '#f8fafc',   // warna background light
+                        darkTheme: '#0f172a',    // warna background dark
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-Outfit leading-8 dark:bg-darkTheme dark:text-white">
+    <div class="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%] dark:hidden">
+        <img src="./assets/header-bg-color.png" alt="" class="w-full" />
+    </div>
+
+    <nav id="navbar" class="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50">
+        <p class="bg-white bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-darkTheme dark:shadow-white/20 sr-only">
+            Hidden</p>
+        <a href="#!">
+            <!-- <img src="./assets/logo.png" alt="Logo" class="w-28 cursor-pointer mr-14 dark:hidden" />
+            <img src="./assets/logo_dark.png" alt="Logo" class="w-28 cursor-pointer mr-14 hidden dark:block" /> -->
+        </a>
+
+        <ul id="navLink"
+            class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-50 font-Ovo dark:border dark:border-white/30 dark:bg-transparent ">
+            <li><a class='hover:text-gray-500 dark:hover:text-gray-300 transition' href="#top">Home</a></li>
+            <li><a class='hover:text-gray-500 dark:hover:text-gray-300 transition' href="#about">About me</a></li>
+            <li><a class='hover:text-gray-500 dark:hover:text-gray-300 transition' href="#work">My portfolio</a></li>
+            <li><a class='hover:text-gray-500 dark:hover:text-gray-300 transition' href="#galeri">My Gallery</a></li>
+        </ul>
+
+        <div class="flex items-center gap-4">
+            <button onclick="toggleTheme()">
+                <img src="./assets/moon_icon.png" alt="" class="w-5 dark:hidden" />
+                <img src="./assets/sun_icon.png" alt="" class="w-5 hidden dark:block" />
+            </button>
+
+
+
+            <button class="block md:hidden ml-3" onclick="openMenu()">
+                <img src="./assets/menu-black.png" alt="" class="w-6 dark:hidden" />
+                <img src="./assets/menu-white.png" alt="" class="w-6 hidden dark:block" />
+            </button>
+
+        </div>
+        <!-- ----- mobile menu ------ -->
+        <ul id="mobileMenu"
+            class="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500 font-Ovo dark:bg-darkHover dark:text-white">
+
+            <div class="absolute right-6 top-6" onclick="closeMenu()">
+                <img src="./assets/close-black.png" alt="" class="w-5 cursor-pointer dark:hidden" />
+                <img src="./assets/close-white.png" alt="" class="w-5 cursor-pointer hidden dark:block" />
+            </div>
+
+            <li><a href="#top" onclick="closeMenu()">Home</a></li>
+            <li><a href="#about" onclick="closeMenu()">About me</a></li>
+            <li><a href="#services" onclick="closeMenu()">Services</a></li>
+            <li><a href="#work" onclick="closeMenu()">My Work</a></li>
+            <li><a href="#contact" onclick="closeMenu()">Contact me</a></li>
+        </ul>
+    </nav>
+
+    <!-- ----- home section ------ -->
+    <div class="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
+        <img src="./assets/profile-img.png" alt="" class="rounded-full w-32" />
+        <h3 class="flex items-end gap-2 text-xl md:text-2xl mb-3 font-Ovo">
+            Hi! I&apos;m Firdaus Prasetya
+            <!-- <img src="./assets/hand-icon.png" alt="" class="w-6 mb-1" /> -->
+        </h3>
+        <h1 class="text-3xl sm:text-6xl lg:text-[66px] font-Ovo">Fresh Graduate in Information Systems</h1>
+        <p class="max-w-2xl mx-auto font-Ovo">I’m passionate about learning and building digital solutions,
+            from web development and UI design to databases and system fundamentals.</p>
+
+        <div class="flex flex-col sm:flex-row items-center gap-4 mt-4">
+            <!-- <a href="#contact"
+                class="px-10 py-2.5 border rounded-full bg-gradient-to-r from-[#b820e6] to-[#da7d20] text-white flex items-center gap-2 dark:border-transparent">
+                contact me <img src="./assets/right-arrow-white.png" alt="" class="w-4" />
+            </a> -->
+
+            <a href="./assets/Firdaus Prasetya-resume (1).pdf" download
+                class="px-10 py-2.5 rounded-full border border-gray-300 dark:border-white/25 hover:bg-slate-100/70 dark:hover:bg-darkHover flex items-center gap-2 bg-white dark:bg-transparent dark:text-white">
+                my resume <img src="./assets/download-icon.png" alt="" class="w-4 dark:invert" />
+            </a>
+        </div>
+    </div>
+
+    <!-- ----- about me section ------ -->
+    <!-- <div id="about" class="w-full px-[12%] py-10 scroll-mt-20"> -->
+    <div id="about" class="w-full py-10 scroll-mt-20">
+        <div class="max-w-5xl mx-auto px-6">
+
+            <h4 class="text-center mb-2 text-lg font-Ovo">Introduction</h4>
+            <h2 class="text-center text-5xl font-Ovo">About me</h2>
+            <div class="flex w-full flex-col lg:flex-row items-center gap-20 my-20">
+                <div class="max-w-max mx-auto relative"><img src="./assets/user-image.png" alt=""
+                        class="w-64 sm:w-80 rounded-3xl max-w-none">
+                    <!-- <div
+                    class="bg-white w-1/2 aspect-square absolute right-0 bottom-0 rounded-full translate-x-1/4 translate-y-1/3 shadow-[0_4px_55px_rgba(149,0,162,0.15)] flex items-center justify-center">
+                    <img src="./assets/circular-text.png" alt="" class="w-full animate-spin_slow">
+                    <img src="./assets/dev-icon.png" alt=""
+                        class="w-1/4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                </div> -->
+                </div>
+                <div class="flex-1">
+                    <p class="mb-10 max-w-2xl font-Ovo">I am an Information Systems fresh graduate with a strong
+                        interest in
+                        technology and digital product development. I enjoy learning new tools, exploring different
+                        areas of
+                        information technology, and building projects to improve my technical skills. Through continuous
+                        practice and personal projects, I am developing my ability to design, build, and analyze digital
+                        systems. I am motivated to grow as a technology professional and contribute to meaningful
+                        digital
+                        solutions.</p>
+                    <ul class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl">
+                        <li
+                            class="border border-gray-300 dark:border-white/30 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:hover:shadow-white/80 dark:hover:bg-darkHover/50">
+                            <img src="./assets/code-icon.png" alt="" class="w-7 mt-3 dark:hidden"><img
+                                src="./assets/code-icon-dark.png" alt="" class="w-7 mt-3 hidden dark:block">
+                            <h3 class="my-4 font-semibold text-gray-700 dark:text-white">Languages</h3>
+                            <p class="text-gray-600 text-sm dark:text-white/80">HTML, CSS, JavaScript, PHP</p>
+                        </li>
+                        <li
+                            class="border border-gray-300 dark:border-white/30 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:hover:shadow-white/80 dark:hover:bg-darkHover/50">
+                            <img src="./assets/edu-icon.png" alt="" class="w-7 mt-3 dark:hidden"><img
+                                src="./assets/edu-icon-dark.png" alt="" class="w-7 mt-3 hidden dark:block">
+                            <h3 class="my-4 font-semibold text-gray-700 dark:text-white">Education</h3>
+                            <p class="text-gray-600 text-sm dark:text-white/80">Bachelor of Information Systems – Bunda
+                                Mulia University</p>
+                        </li>
+                        <!-- <li
+                        class="border border-gray-300 dark:border-white/30 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:hover:shadow-white/80 dark:hover:bg-darkHover/50">
+                        <img src="./assets/project-icon.png" alt="" class="w-7 mt-3 dark:hidden"><img
+                            src="./assets/project-icon-dark.png" alt="" class="w-7 mt-3 hidden dark:block">
+                        <h3 class="my-4 font-semibold text-gray-700 dark:text-white">Projects</h3>
+                        <p class="text-gray-600 text-sm dark:text-white/80">Built more than 5 projects</p>
+                    </li> -->
+                    </ul>
+                    <!-- <h4 class="my-6 text-gray-700 font-Ovo dark:text-white/80">Tools i use</h4>
+                <ul class="flex items-center gap-3 sm:gap-5">
+                    <li
+                        class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-300 dark:border-white/30 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+                        <img src="./assets/vscode.png" alt="vscode" class="w-5 sm:w-7">
+                    </li>
+                    <li
+                        class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-300 dark:border-white/30 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+                        <img src="./assets/firebase.png" alt="firebase" class="w-5 sm:w-7">
+                    </li>
+                    <li
+                        class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-300 dark:border-white/30 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+                        <img src="./assets/mongodb.png" alt="mongodb" class="w-5 sm:w-7">
+                    </li>
+                    <li
+                        class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-300 dark:border-white/30 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+                        <img src="./assets/figma.png" alt="figma" class="w-5 sm:w-7">
+                    </li>
+                    <li
+                        class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-300 dark:border-white/30 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+                        <img src="./assets/git.png" alt="git" class="w-5 sm:w-7">
+                    </li>
+                </ul> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- My Work Section -->
+    <div id="work" class="w-full px-[12%] py-10 scroll-mt-20">
+        <h4 class="text-center mb-2 text-lg font-Ovo">My portfolio 1</h4>
+        <h2 class="text-center text-5xl font-Ovo">UI/UX</h2>
+        <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">Welcome to my portfolio. This collection showcases
+            my learning journey and personal projects in UI/UX and digital design.</p>
+        <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 my-10 gap-5 dark:text-black">
+
+            <a href="https://figma.fun/Zaz3qm" target="_blank" class="block">
+                <div class="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group"
+                    style="background-image: url('./assets/benerin.jpg');">
+
+                    <div
+                        class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+                        <div>
+                            <h2 class="font-semibold text-sm">Service App Prototype</h2>
+                            <p class="text-sm text-gray-700">Mobile Design</p>
+                        </div>
+                        <div
+                            class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
+                            <img src="./assets/send-icon.png" alt="" class="w-5">
+                        </div>
+                    </div>
+
+                </div>
+            </a>
+
+            <a href="https://figma.fun/Zaz3qm" target="_blank" class="block">
+                <div class="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group"
+                    style="background-image: url('./assets/ingetin.jpg');">
+                    <div
+                        class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+                        <div>
+                            <h2 class="font-semibold text-sm">Reminder App Prototype</h2>
+                            <p class="text-sm text-gray-700">Mobile Design</p>
+                        </div>
+                        <div
+                            class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
+                            <img src="./assets/send-icon.png" alt="" class="w-5">
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://figma.fun/Zaz3qm" target="_blank" class="block">
+                <div class="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group"
+                    style="background-image: url('./assets/ewallet.jpg');">
+                    <div
+                        class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+                        <div>
+                            <h2 class="font-semibold text-sm">E-Wallet App Prototype</h2>
+
+                            <p class="text-sm text-gray-700">Mobile Design</p>
+                        </div>
+                        <div
+                            class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
+                            <img src="./assets/send-icon.png" alt="" class="w-5">
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+        <div
+            class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 my-10 gap-5 justify-center dark:text-black">
+
+            <a href="https://figma.fun/Zaz3qm" target="_blank" class="block">
+                <div class="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group"
+                    style="background-image: url('./assets/grab.jpg');">
+                    <div
+                        class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+                        <div>
+                            <h2 class="font-semibold text-sm">Grab App Practice Project</h2>
+                            <p class="text-sm text-gray-700">Mobile Design</p>
+                        </div>
+                        <div
+                            class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
+                            <img src="./assets/send-icon.png" alt="" class="w-5">
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="https://figma.fun/Zaz3qm" target="_blank" class="block">
+                <div class="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group"
+                    style="background-image: url('./assets/mybca.jpg');">
+                    <div
+                        class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+                        <div>
+                            <h2 class="font-semibold text-sm">myBCA App Practice Project (Soon)</h2>
+                            <p class="text-sm text-gray-700">Mobile Design</p>
+                        </div>
+                        <div
+                            class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
+                            <img src="./assets/send-icon.png" alt="" class="w-5">
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+        <!-- <a href="#"
+            class="w-max flex items-center justify-center gap-2 text-gray-700 border border-gray-300 dark:border-white/25 hover:bg-slate-100/70 dark:hover:bg-darkHover rounded-full py-2 px-8 mx-auto my-20 duration-300 dark:text-white">Show
+            more<img src="./assets/right-arrow-bold.png" alt="" class="w-4 dark:hidden"><img
+                src="./assets/right-arrow-bold-dark.png" alt="" class="w-4 hidden dark:block"></a> -->
+    </div>
+
+
+    <!-- HTML/CSS -->
+    <div id="work" class="w-full px-[12%] py-10 scroll-mt-20">
+        <h4 class="text-center mb-2 text-lg font-Ovo">My portfolio 2</h4>
+        <h2 class="text-center text-5xl font-Ovo">HTML & CSS</h2>
+        <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">Welcome to my HTML & CSS portfolio. This section
+            highlights my practice projects and learning progress in building clean, responsive, and user-friendly web
+            layouts.</p>
+        <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 my-10 gap-5 dark:text-black">
+            <!-- <div class="max-w-5xl grid grid-cols-auto my-10 gap-5 dark:text-black"> -->
+            <a href="./href portofolio/1. Website UTS 2.0 (E-Commerce)/index.html" target="_blank" class="block">
+                <div class="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group"
+                    style="background-image: url('./assets/i-ciming.jpg');">
+                    <div
+                        class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+                        <div>
+                            <h2 class="font-semibold text-sm">E-Commerce</h2>
+                            <p class="text-sm text-gray-700">Web Design</p>
+                        </div>
+                        <div
+                            class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
+                            <img src="./assets/send-icon.png" alt="" class="w-5">
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="./href portofolio/2. School Website/index.html" target="_blank" class="block">
+                <div class="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group"
+                    style="background-image: url('./assets/school.jpg');">
+                    <div
+                        class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+                        <div>
+                            <h2 class="font-semibold text-sm">School</h2>
+                            <p class="text-sm text-gray-700">Web Design</p>
+                        </div>
+                        <div
+                            class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
+                            <img src="./assets/send-icon.png" alt="" class="w-5">
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="./href portofolio/3. Menu Minimalis/Menu.html" target="_blank" class="block">
+                <div class="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group"
+                    style="background-image: url('./assets/restaurant.jpg');">
+                    <div
+                        class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
+                        <div>
+                            <h2 class="font-semibold text-sm">Menu</h2>
+
+                            <p class="text-sm text-gray-700">Web Design</p>
+                        </div>
+                        <div
+                            class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
+                            <img src="./assets/send-icon.png" alt="" class="w-5">
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- <a href="#"
+            class="w-max flex items-center justify-center gap-2 text-gray-700 border border-gray-300 dark:border-white/25 hover:bg-slate-100/70 dark:hover:bg-darkHover rounded-full py-2 px-8 mx-auto my-20 duration-300 dark:text-white">Show
+            more<img src="./assets/right-arrow-bold.png" alt="" class="w-4 dark:hidden"><img
+                src="./assets/right-arrow-bold-dark.png" alt="" class="w-4 hidden dark:block"></a> -->
+    </div>
+
+
+
+    <!-- Skrikpsi -->
+    <div id="work" class="w-full px-[12%] py-10 scroll-mt-20">
+        <h4 class="text-center mb-2 text-lg font-Ovo">My Final Thesis Project</h4>
+        <h2 class="text-center text-5xl font-Ovo">Human Resource Information System</h2>
+        <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo"> This section showcases my thesis project, a Human
+            Resource Information System designed and developed to manage employee data and support basic HR processes.
+        </p>
+
+
+        <!-- Gallery Section -->
+         
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+            <!-- Column 1 -->
+            <div class="space-y-6">
+                <div class="transition duration-300 ease-in-out hover:scale-125 cursor-pointer">
+                    <img src="./assets/skripsi (1).png" class="w-full rounded-lg shadow-lg" alt="Boat on Calm Water">
+                </div>
+
+                <div class="transition duration-300 ease-in-out hover:scale-125 cursor-pointer">
+                    <img src="./assets/skripsi (2).png" class="w-full rounded-lg shadow-lg"
+                        alt="Wintry Mountain Landscape">
+                </div>
+
+                <div class="transition duration-300 ease-in-out hover:scale-125 cursor-pointer">
+                    <img src="./assets/manager perfomance review.png" class="w-full rounded-lg shadow-lg"
+                        alt="Wintry Mountain Landscape">
+                </div>
+
+                <div class="transition duration-300 ease-in-out hover:scale-125 cursor-pointer">
+                    <img src="./assets/skripsi (10).png" class="w-full rounded-lg shadow-lg"
+                        alt="Wintry Mountain Landscape">
+                </div>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="space-y-[2.55rem]">
+                <div class="transition duration-300 ease-in-out hover:scale-125 cursor-pointer">
+                    <img src="./assets/skripsi (11).png" class="w-full rounded-lg shadow-lg"
+                        alt="Mountains in the Clouds">
+                </div>
+                <div class="transition duration-300 ease-in-out hover:scale-125 cursor-pointer">
+                    <img src="./assets/manager workshop.png" class="w-full rounded-lg shadow-lg"
+                        alt="Boat on Calm Water">
+                </div>
+
+                <div class="transition duration-300 ease-in-out hover:scale-125 cursor-pointer">
+                    <img src="./assets/list leave.png" class="w-full rounded-lg shadow-lg" alt="Boat on Calm Water">
+                </div>
+
+                <div class="transition duration-300 ease-in-out hover:scale-125 cursor-pointer">
+                    <img src="./assets/skripsi (12).png" class="w-full rounded-lg shadow-lg" alt="Boat on Calm Water">
+                </div>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="space-y-[1.875rem]">
+                <div class="transition duration-300 ease-in-out hover:scale-125 cursor-pointer">
+                    <img src="./assets/skripsi (8).png" class="w-full rounded-lg shadow-lg" alt="Waves at Sea">
+                </div>
+
+                <div class="transition duration-300 ease-in-out hover:scale-125 cursor-pointer">
+                    <img src="./assets/skripsi (6).png" class="w-full rounded-lg shadow-lg"
+                        alt="Yosemite National Park">
+                </div>
+
+                <div class="transition duration-300 ease-in-out hover:scale-125 cursor-pointer">
+                    <img src="./assets/skripsi (9).png" class="w-full rounded-lg shadow-lg"
+                        alt="Yosemite National Park">
+                </div>
+
+                <div class="transition duration-300 ease-in-out hover:scale-125 cursor-pointer">
+                    <img src="./assets/Screenshot 2026-01-27 211045.png" class="w-full rounded-lg shadow-lg"
+                        alt="Yosemite National Park">
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+
+        <!-- <a href="#"
+            class="w-max flex items-center justify-center gap-2 text-gray-700 border border-gray-300 dark:border-white/25 hover:bg-slate-100/70 dark:hover:bg-darkHover rounded-full py-2 px-8 mx-auto my-20 duration-300 dark:text-white">Show
+            more<img src="./assets/right-arrow-bold.png" alt="" class="w-4 dark:hidden"><img
+                src="./assets/right-arrow-bold-dark.png" alt="" class="w-4 hidden dark:block"></a> -->
+    </div>
+
+
+
+    
+    <!-- Gallery desain -->
+     
+    <!-- <div id="galeri" class="w-full px-[12%] py-10 scroll-mt-20">
+        <h4 class="text-center mb-2 text-lg font-Ovo">Design Gallery</h4>
+        <h2 class="text-center text-5xl font-Ovo">Visual & Creative Works</h2>
+        <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo"> A collection of my creative design works
+            showcasing visual layouts, graphic elements, and design explorations.
+        </p> -->
+
+        <!-- FOTO FOTO DESAIN -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+            <!-- Column 1 -->
+            <!-- <div class="space-y-6">
+                <div class="transition duration-300 ease-in-out hover:scale-125 cursor-pointer">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+                        class="w-full rounded-lg shadow-lg" alt="Boat on Calm Water">
+                </div>
+
+                <div class="transition duration-300 ease-in-out hover:scale-125 cursor-pointer">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain1.webp"
+                        class="w-full rounded-lg shadow-lg" alt="Wintry Mountain Landscape">
+                </div>
+            </div> -->
+
+            <!-- Column 2 -->
+            <!-- <div class="space-y-6">
+                <div class="transition duration-300 ease-in-out hover:scale-125 cursor-pointer">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain2.webp"
+                        class="w-full rounded-lg shadow-lg" alt="Mountains in the Clouds">
+                </div>
+                <div class="transition duration-300 ease-in-out hover:scale-125 cursor-pointer">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+                        class="w-full rounded-lg shadow-lg" alt="Boat on Calm Water">
+                </div>
+            </div> -->
+
+            <!-- Column 3 -->
+            <!-- <div class="space-y-6">
+                <div class="transition duration-300 ease-in-out hover:scale-125 cursor-pointer">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp"
+                        class="w-full rounded-lg shadow-lg" alt="Waves at Sea">
+                </div>
+
+                <div class="transition duration-300 ease-in-out hover:scale-125 cursor-pointer">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp"
+                        class="w-full rounded-lg shadow-lg" alt="Yosemite National Park">
+                </div> -->
+            </div>
+
+        </div>
+
+
+
+        <!-- <a href="#"
+            class="w-max flex items-center justify-center gap-2 text-gray-700 border border-gray-300 dark:border-white/25 hover:bg-slate-100/70 dark:hover:bg-darkHover rounded-full py-2 px-8 mx-auto my-20 duration-300 dark:text-white">Show
+            more<img src="./assets/right-arrow-bold.png" alt="" class="w-4 dark:hidden"><img
+                src="./assets/right-arrow-bold-dark.png" alt="" class="w-4 hidden dark:block"></a> -->
+    </div>
+
+
+
+    <!-- Footer -->
+    <div class="mt-20">
+        <div class="text-center">
+            <!-- <a href="#!">
+                <img src="./assets/logo.png" alt="" class="w-36 mx-auto mb-2 dark:hidden">
+                <img src="./assets/logo_dark.png" alt="" class="w-36 mx-auto mb-2 hidden dark:block">
+            </a> -->
+            <!-- <div class="w-max flex items-center gap-2 mx-auto">
+                <img src="./assets/mail_icon.png" alt="" class="w-5 dark:hidden">
+                <img src="./assets/mail_icon_dark.png" alt="" class="w-5 hidden dark:block">
+                <a href="#!">firdausprasetya18@gmail.com</a>
+            </div> -->
+        </div>
+        <div class="text-center sm:flex items-center justify-between border-t border-gray-400 mx-[10%] mt-12 py-3">
+            <div class="w-max flex items-center gap-2 mx-auto">
+                <img src="./assets/mail_icon.png" alt="" class="w-5 dark:hidden">
+                <img src="./assets/mail_icon_dark.png" alt="" class="w-5 hidden dark:block">
+                <a href="#!">firdausprasetya18@gmail.com</a>
+            </div>
+            <!-- <p>© 2025 <a href="https://prebuiltui.com/" target="_blank">PrebuiltUI</a>. All rights reserved. Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a></p>  -->
+            <ul class="flex items-center gap-10 justify-center mt-4 sm:mt-0">
+
+                <!-- <li><a target="_blank" href="#!">GitHub</a></li>
+                <li><a target="_blank" href="#!">LinkedIn</a></li>
+                <li><a target="_blank" href="#!">Twitter</a></li> -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
